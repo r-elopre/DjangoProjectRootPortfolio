@@ -1,9 +1,55 @@
+/* Style for the body to center the box */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
 }
-h1 {
-    color: #333;
+
+.box {
+    width: 600px;
+    height: 300px;
+    border: 2px solid black;
+
+    /* Flexbox properties to center content */
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
 }
+
+/* Style for the row-container */
+.row-container {
+    display: flex;
+    flex-direction: row; /* Arrange items in a row */
+    gap: 10px; /* Add space between items */
+    padding: 20px; /* Optional: Add padding around the row */
+    border: 2px solid black; /* Add a black border */
+    width: 100%; /* Increase width to fill parent */
+    height: 150px; /* Set the height */
+    box-sizing: border-box; /* Ensure padding is included in the size */
+}
+
+/* Common style for all boxes */
+.row-container > div {
+    flex: 1; /* Make each box take an equal amount of space */
+    height: 100px; /* Set height for the boxes */
+    border: 2px solid red; /* Add a red border */
+    background-color: #f9f9f9; /* Default background color */
+}
+
+/* Specific styles for each box */
+.information-img {
+    background-color: lightblue !important; /* Ensure this takes priority */
+}
+
+.profile-img {
+    background-color: lightgreen !important; /* Ensure this takes priority */
+}
+
+.diploma-img {
+    background-color: lightcoral !important; /* Ensure this takes priority */
+}
+
+
+ 
