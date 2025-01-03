@@ -8,32 +8,35 @@ body {
 }
 
 .box {
-    width: 600px;
-    height: 300px;
-    border: 2px solid black;
-
-    /* Flexbox properties to center content */
-    display: flex;
-    justify-content: center; /* Horizontally center the content */
-    align-items: center; /* Vertically center the content */
+    width: 600px; /* Fixed width for the parent container */
+    height: 300px; /* Fixed height */
+    border: 2px solid black; /* Border for visualization */
+    overflow: hidden; /* Clip content that overflows */
+    position: relative; /* Ensure the child uses absolute positioning relative to this container */
 }
 
 /* Style for the row-container */
 .row-container {
+    width: 1400px; /* Much wider than .box */
+    height: 150px; /* Smaller height for the row-container */
+    border: 2px solid black; /* Black border for visualization */
     display: flex;
     flex-direction: row; /* Arrange items in a row */
     gap: 10px; /* Add space between items */
-    padding: 20px; /* Optional: Add padding around the row */
-    border: 2px solid black; /* Add a black border */
-    width: 100%; /* Increase width to fill parent */
-    height: 150px; /* Set the height */
-    box-sizing: border-box; /* Ensure padding is included in the size */
+    background-color: lightgray; /* Background for visibility */
+    box-sizing: border-box; /* Include padding and border in width */
+    position: absolute; /* Allow the row-container to overflow */
+    left: 50%; /* Position horizontally at the center of .box */
+    top: 50%; /* Position vertically at the center of .box */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
 }
+
+
 
 /* Common style for all boxes */
 .row-container > div {
     flex: 1; /* Make each box take an equal amount of space */
-    height: 100px; /* Set height for the boxes */
+    height: 100%; /* Fill the max height of the row-container */
     border: 2px solid red; /* Add a red border */
     background-color: #f9f9f9; /* Default background color */
 }
